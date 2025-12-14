@@ -11,8 +11,14 @@ export const auth = betterAuth({
 	}),
 	trustedOrigins: [process.env.CORS_ORIGIN || ""],
 	emailAndPassword: {
-		enabled: true,
+		enabled: false,
 	},
+  socialProviders: {
+    roblox: {
+      clientId: process.env.ROBLOX_CLIENT_ID as string,
+      clientSecret: process.env.ROBLOX_CLIENT_SECRET as string,
+    }
+  },
 	advanced: {
 		defaultCookieAttributes: {
 			sameSite: "none",
