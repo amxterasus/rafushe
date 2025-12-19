@@ -55,8 +55,12 @@ function RootComponent() {
 				disableTransitionOnChange
 				storageKey="vite-ui-theme"
 			>
-        <Header />
-				<Outlet />
+        <div className="min-h-screen flex flex-col pt-13">
+          <Header />
+          <div className="flex-1 w-full max-w-7xl border-border border-dotted border-x mx-auto">
+            <Outlet />
+          </div>
+        </div>
 				<Toaster richColors />
 			</ThemeProvider>
 			<TanStackRouterDevtools position="bottom-left" />
